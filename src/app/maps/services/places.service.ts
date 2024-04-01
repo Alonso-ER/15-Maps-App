@@ -62,8 +62,13 @@ export class PlacesService {
         this.isLoadingPLaces = false;
         this.places = resp.features;
 
-        this.mapService.createMarkersFromPlaces( this.places );
+        this.mapService.createMarkersFromPlaces( this.places, this.userLocation! );
       });
   }
+
+  deletePlaces(){
+    this.places = [];
+  }
+
 
 }
